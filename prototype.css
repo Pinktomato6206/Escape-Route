@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: black;
+  color: crimson;
+  overflow-x: hidden;
+  animation: bg-flicker 6s infinite alternate;
+  cursor: crosshair;
+}
+
+::selection {
+  background: crimson;
+  color: black;
+}
+
+.glitch {
+  position: relative;
+  font-size: 3em;
+  color: #fff;
+  animation: glitch-flicker 1s infinite;
+  text-shadow: 0 0 5px crimson, 0 0 10px red;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch::before {
+  top: -2px;
+  color: #ff0040;
+  z-index: -1;
+  animation: glitchTop 1.5s infinite linear;
+}
+
+.glitch::after {
+  top: 2px;
+  color: #ff00ff;
+  z-index: -2;
+  animation: glitchBottom 1.5s infinite linear;
+}
+
+.flicker {
+  animation: flicker 2s infinite;
+  color: crimson;
+  text-shadow: 0 0 5px red, 0 0 10px crimson;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid crimson;
+  background: radial-gradient(ellipse at center, #1a0000, black);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: crimson;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: white;
+  text-shadow: 0 0 5px crimson;
+}
+
+.glitch-ad {
+  background: url('IMG/fwn.jpg') center center / cover no-repeat;
+  text-align: center;
+  padding: 100px 0;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.glitch-ad::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 0, 0.05) 3px
+  );
+  pointer-events: none;
+  z-index: 2;
+  animation: scan 1s infinite;
+}
+
+.glitch-about {
+  background-color: #0a0000;
+  text-align: center;
+  padding: 50px;
+  color: #ff003c;
+  border-top: 1px solid #300000;
+  border-bottom: 1px solid #300000;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 2px solid crimson;
+  color: crimson;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0;
+  animation: flicker 1.5s infinite;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background: crimson;
+  color: black;
+  text-shadow: 0 0 5px black;
+}
+
+footer {
+  background-color: #0f0f0f;
+  color: crimson;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* Glitch keyframes */
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(0, 9999px, 10px, 0); }
+  20% { clip: rect(0, 9999px, 0, 0); }
+  40% { clip: rect(0, 9999px, 8px, 0); }
+  60% { clip: rect(0, 9999px, 5px, 0); }
+  80% { clip: rect(0, 9999px, 15px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(5px, 9999px, 9999px, 0); }
+  10% { clip: rect(10px, 9999px, 9999px, 0); }
+  20% { clip: rect(8px, 9999px, 9999px, 0); }
+  40% { clip: rect(5px, 9999px, 9999px, 0); }
+  60% { clip: rect(15px, 9999px, 9999px, 0); }
+  80% { clip: rect(10px, 9999px, 9999px, 0); }
+  100% { clip: rect(5px, 9999px, 9999px, 0); }
+}
+
+@keyframes glitch-flicker {
+  0% { transform: none; }
+  10% { transform: translate(2px, -2px); }
+  20% { transform: translate(-2px, 2px); }
+  30% { transform: translate(3px, 0); }
+  40% { transform: translate(-3px, 2px); }
+  50% { transform: none; }
+  100% { transform: none; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes bg-flicker {
+  0% { background-color: black; }
+  50% { background-color: #0f0f0f; }
+  100% { background-color: black; }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

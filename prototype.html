@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Escape Route — Corrupted</title>
+  <link rel="stylesheet" href="prototype.css" />
+  <link rel="icon" href="escape route.ico" type="image/x-icon">
+</head>
+<body>
+  <audio id="bg-audio" autoplay loop muted>
+    <source src="audio/lmao.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+<header class="glitch-header">
+  <h1 class="glitch" data-text="Escape Route">Escape Route</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="glitch-ad">
+  <h2 class="flicker">You wanna go back?</h2>
+  <p>Okay... here you go...</p>
+  <a href="index.html" class="btn glitch" data-text="Enter">Enter</a>
+</section>
+
+<section class="about glitch-about">
+  <h2 class="flicker">Hard times...</h2>
+  <p>G̷͓̚o̶̻͗n̷̛͈n̴͕̓a̶̰̾ ̷͙̐m̷̞̐a̴͍̚k̵̟͊e̶͙͘ ̶̾ͅy̸̞͌o̶̙̔ǘ̵͕ ̴̡̐w̴̩͑õ̷ͅn̷̰͂d̴̗͗e̸̱͆r̵̦̎</p>
+</section>
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("bg-audio");
+      document.body.addEventListener("click", () => {
+        audio.muted = false;
+        audio.play().catch((e) => console.log("Autoplay blocked"));
+      });
+    });
+  </script>
+
+<footer>
+  <p>&copy; 2025 Rhon Enterprises. System compromised.</p>
+</footer>
+</body>
+</html>

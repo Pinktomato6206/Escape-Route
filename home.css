@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: black;
+    color: #333;
+}
+
+.container {        
+    height: 100px;
+    width: 100%;
+    margin: auto;
+}
+
+.container a,
+.container a:visited,
+.container a:hover,
+.container a:active {
+    color: black;
+}
+
+header {
+    background-color: pink;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    header h1,
+    header h1 a{
+        text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+    nav ul li {
+        margin: 0 50px;
+    }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+.ad {
+    background: url('IMG/fwn.jpg') center center / cover no-repeat;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+    .ad .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 30px;
+        background: #fff;
+        color: dodgerblue;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+.about {
+    background: pink;
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}

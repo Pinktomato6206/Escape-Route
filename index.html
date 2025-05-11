@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+    <div class="janel">
+        <div class="ariann">
+            <img src="IMG/paramore.jpeg" alt="icon" />
+            <h2>Escape Route</h2>
+        </div>
+
+        <form onsubmit="login(event)">
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit">Log In</button>
+        </form>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === "pinktomato" && pass === "prototype") {
+                window.location.href = "home.html";
+            }
+            if (user === "pinktomato" && pass === "1234") {
+                window.location.href = "prototype.html";
+            } else {
+                document.getElementById("message").textContent = "Invalid credentials.";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
